@@ -10,6 +10,8 @@ import Cart from "./pages/Cart";
 import HomePage from "./pages/HomePage";
 import MaintainCategories from "./pages/MaintainCategories";
 import MaintainProducts from "./pages/MaintainProducts";
+import EditProduct from './pages/EditProduct';
+
 // material icon theme
 function App() {
   return (
@@ -31,6 +33,7 @@ function App() {
         <Route path="admin/lisa-toode" element={ <AddProduct /> } />
         <Route path="admin/halda-tooteid" element={ <MaintainProducts /> } />
         <Route path="admin/halda-kategooriaid" element={ <MaintainCategories /> } />
+        <Route path="admin/muuda/:id" element={ <EditProduct /> } />
       </Routes>
 
     </div>

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 function MaintainProducts() {
   const [products, setProducts] = useState([]);
@@ -46,6 +47,9 @@ function MaintainProducts() {
           <div>KOGUS: {element.stock}</div>
           <div>KATEGOORIA: {element.category?.name}</div>
           <button onClick={() => deleteProduct(element.id)}>Kustuta toode</button>
+          <Link to={"/admin/muuda/" + element.id}>
+            <button>Muuda toode</button>
+          </Link>
           <br />
           <button onClick={() => decreaseQuantity(element)}>-</button>
           <button onClick={() => increaseQuantity(element)}>+</button>
