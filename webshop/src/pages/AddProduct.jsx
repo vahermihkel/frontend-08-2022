@@ -32,7 +32,10 @@ function AddProduct() {
     fetch("http://localhost:8080/add-product",{
       method: "POST",
       body: JSON.stringify(newProduct),
-      headers: {"Content-Type": "application/json"}
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": "Bearer " + sessionStorage.getItem("token")
+      }
     })
   }
 
@@ -54,8 +57,3 @@ function AddProduct() {
 }
 
 export default AddProduct;
-
-{/* <img src={element.image} alt="" />
-<div>NIMI: {element.name}</div>
-<div>HIND: {element.price}</div>
-<div>KATEGOORIA: {element.category?.name}</div> */}
